@@ -11,6 +11,7 @@ let s = `Hello World`;
  * 1. Đếm 1 chuỗi có bao nhiêu khoảng trắng
  * 2. Liệt kê và đếm các kí tự nguyên âm trong chuỗi : u e o a i
  */
+// Hàm đếm số lượng khoảng trắng trong chuỗi
 function Space(Str) {
     let count = 0;
     for (let i of Str) {
@@ -23,6 +24,7 @@ function Space(Str) {
     console.log(`Số lượng khoảng trắng trong chuỗi là: ${count}`);
 }
 
+// Hàm kiểm tra ký tự đã xuất hiện trong chuỗi kết quả chưa
 function checkCharacterInString(str, char) {
     for (let i of str) {
         if (i == char) return false;
@@ -30,10 +32,12 @@ function checkCharacterInString(str, char) {
     return true;
 }
 
+// Hàm kiểm tra xem ký tự có phải là nguyên âm không
 function checkVowel(i) {
     return i == 'u' || i == 'e' || i == 'o' || i == 'a' || i == 'i' || i == 'U' || i == 'E' || i == 'O' || i == 'A' || i == 'I';
 }
 
+// Hàm liệt kê và đếm các nguyên âm trong chuỗi
 function listVowel(Str) {
     let count = 0;
     let res = '';
@@ -45,7 +49,7 @@ function listVowel(Str) {
     }
     console.log(`Các nguyên âm trong chuỗi là: ${res}có tất cả ${count} nguyên âm `);
 }
-
+// Main 
 let Str = 'KkfIROBPMNyRuDWayfnEGDJGozhq CksVPIuuRyztCHxsTsbHxjwtfdVnuidJTAn ';
 Space(Str);
 listVowel(Str);
