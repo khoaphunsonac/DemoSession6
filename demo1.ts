@@ -24,17 +24,14 @@ function Space(Str) {
 }
 
 function checkCharacterInString(str, char) {
-    for(let i of str){
+    for (let i of str) {
         if (i == char) return false;
     }
     return true;
 }
 
 function checkVowel(i) {
-    if (i == 'u' || i == 'e' || i == 'o' || i == 'a' || i == 'i' ||
-        i == 'U' || i == 'E' || i == 'O' || i == 'A' || i == 'I')
-        return true;
-    else return false;
+    return i == 'u' || i == 'e' || i == 'o' || i == 'a' || i == 'i' || i == 'U' || i == 'E' || i == 'O' || i == 'A' || i == 'I';
 }
 
 function listVowel(Str) {
