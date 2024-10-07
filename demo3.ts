@@ -27,6 +27,8 @@ function listFileName(fileNames, extension) {
 //Xây dựng các hàm thực hiện các yêu cầu sau 
 // 1. Đếm có bao nhiêu tên file bắt đầu bằng chữ "com"
 // 2. Kiểm tra có file nào có chứa chữ số V1 hay không 
+// 2. Kiểm tra có file nào có chứa khoảng trắng hay không 
+
 
 function F1(fileNames, extension) {
     let count = 0;
@@ -49,4 +51,9 @@ console.log("Số lượng file bắt đầu từ chữ " + exten0 + " là: " + 
 let exten1 = 'v1';
 if (F2(fileNames, exten1)) console.log("Trong mảng có chứa chữ " + exten1);
 else console.log("Trong mảng không có chứa chữ " + exten1);
+
+let exten2 = ' ';
+if (F2(fileNames, exten2)) console.log("Trong mảng có chứa chữ khoảng trắng");
+else console.log("Trong mảng không chứa chữ khoảng trắng");
+
 
