@@ -29,6 +29,9 @@ function listProduct(product) {
  * 2. Xây dựng hàm liệt kê các sản phẩm có tên chứa 1 từ khóa
  * 3. Kiểm tra 1 mã sản phẩm có tồn tại trong danh sách sản phẩm hay không
  * 4. Liệt kê các sản phẩm có giá nằm trong khoảng từ min đến max
+ * 5. Tính tổng số lượng các sản phẩm có tên kết thúc chứa 1 từ khóa
+ * 6. Tinh tong tien cac san pham co ten bat dau voi 1 tu khoa. Tra ve ket qua
+ * 7. Kiem tra co san pham nao co ten san pham dai hon 20 ki tu hay khong?
  */
 
 function listInforOfProduct(product) {
@@ -66,7 +69,42 @@ function listWithPrice(products, min, max) {
         };
     }
 }
+
+function countQualityWithLast(products, key) {
+    let count = 0;
+    for (let i = 0; i < products.length; i++) {
+        let s = products[i].split(",");
+        if (s[1].toLowerCase().endsWith(key.toLowerCase())) {
+            count += Number(s[3]);
+        };
+    }
+    return count;
+}
+
+function totalPriceWithStart(products, key) {
+    let total = 0;
+    for (let i = 0; i < products.length; i++) {
+        let s = products[i].split(",");
+        if (s[1].toLowerCase().startsWith(key.toLowerCase())) {
+            total += Number(s[2]) * Number(s[3]);
+        };
+    }
+    return total;
+}
+
+function checkLengthName(products) {
+    for (let i = 0; i < products.length; i++) {
+        let s = products[i].split(",");
+        if (s[1].length > 20) {
+            return true;
+        };
+    }
+    return false;
+}
 // Test
-listProductWithKey(products, "tablet");
-console.log(checkProductWithKey(products, "laptop"));
-listWithPrice(products, 5, 12);
+// listProductWithKey(products, "Mo");
+// console.log(checkProductWithKey(products, "top"));
+// listWithPrice(products, 5, 12);
+// console.log(countQualityWithLast(products,'top'));
+// console.log(totalPriceWithStart(products,"lap"));
+console.log(checkLengthName(products));
