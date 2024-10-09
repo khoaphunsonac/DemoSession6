@@ -101,10 +101,11 @@ function checkLengthName(products) {
     }
     return false;
 }
+
 // Test
-// listProductWithKey(products, "Mo");
-// console.log(checkProductWithKey(products, "top"));
-// listWithPrice(products, 5, 12);
-// console.log(countQualityWithLast(products,'top'));
-// console.log(totalPriceWithStart(products,"lap"));
+listProductWithKey(products, "Mo");
+console.log(checkProductWithKey(products, "top"));
+listWithPrice(products, 5, 12);
+console.log(countQualityWithLast(products,'top'));
+console.log(totalPriceWithStart(products,"lap"));
 console.log(checkLengthName(products));
