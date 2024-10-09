@@ -42,7 +42,7 @@ function listInforOfProduct(product) {
 function listProductWithKey(products, key) {
     for (let i = 0; i < products.length; i++) {
         let s = products[i].split(",");
-        if (s[1] == key) {
+        if (s[1].toLowerCase().includes(key.toLowerCase())) {
             listInforOfProduct(products[i]);
             console.log("-----------------------");
         };
@@ -52,7 +52,7 @@ function listProductWithKey(products, key) {
 function checkProductWithKey(products, key) {
     for (let i = 0; i < products.length; i++) {
         let s = products[i].split(",");
-        if (s[1] == key) return true;
+        if (s[1].toLowerCase().includes(key.toLowerCase())) return true;
     }
     return false;
 }
@@ -60,7 +60,7 @@ function checkProductWithKey(products, key) {
 function listWithPrice(products, min, max) {
     for (let i = 0; i < products.length; i++) {
         let s = products[i].split(",");
-        if (s[3] >= min && s[3] <= max) {
+        if (Number(s[3]) >= min && Number(s[3]) <= max) {
             listInforOfProduct(products[i]);
             console.log("-----------------------");
         };
